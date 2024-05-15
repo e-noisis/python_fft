@@ -33,8 +33,8 @@ amplitude_dB = 20 * np.log10(np.abs(positive_fft_result) / np.max(np.abs(positiv
 # Get the threshold from the user
 threshold = float(input("Enter the amplitude threshold (in dB): "))
 
-# Find peaks in the FFT result above the threshold
-peaks, _ = find_peaks(amplitude_dB, height=threshold, distance=20)  # Adjust 'distance' as needed to separate peaks
+# Find peaks in the FFT result above the threshold with prominence and height filtering
+peaks, properties = find_peaks(amplitude_dB, height=threshold, prominence=1, distance=20)
 
 # Get the 10 highest peaks above the threshold
 if len(peaks) < 10:
