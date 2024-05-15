@@ -77,8 +77,8 @@ for freq, amp in zip(top_peaks_freqs, top_peaks_amps):
 table = plt.table(cellText=cell_text[1:],  # Exclude header from cellText
                   colLabels=cell_text[0],  # Use the first row as colLabels
                   cellLoc='center',
-                  loc='right',
-                  bbox=[1.2, 0.1, 0.3, 0.8],
+                  loc='upper right',
+                  bbox=[1.05, 0.1, 0.3, 0.8],  # Adjust the bbox to make space
                   edges='open')
 
 table.auto_set_font_size(False)
@@ -86,4 +86,5 @@ table.set_fontsize(10)
 
 # Display the plot with the table
 plt.grid(True)
+plt.tight_layout()
 plt.show()
